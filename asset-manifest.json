@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/MovieZone/static/css/main.1ec93e97.css",
-    "main.js": "/MovieZone/static/js/main.40fe4c2a.js",
+    "main.js": "/MovieZone/static/js/main.eee84351.js",
     "index.html": "/MovieZone/index.html",
     "static/media/search.svg": "/MovieZone/static/media/search.b416605642fcb3f2447edc96c1a80e05.svg",
     "main.1ec93e97.css.map": "/MovieZone/static/css/main.1ec93e97.css.map",
-    "main.40fe4c2a.js.map": "/MovieZone/static/js/main.40fe4c2a.js.map"
+    "main.eee84351.js.map": "/MovieZone/static/js/main.eee84351.js.map"
   },
   "entrypoints": [
     "static/css/main.1ec93e97.css",
-    "static/js/main.40fe4c2a.js"
+    "static/js/main.eee84351.js"
   ]
 }
