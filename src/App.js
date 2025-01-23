@@ -6,7 +6,7 @@ import Recommendations from "./Recommendations";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-const API_URL = "https://www.omdbapi.com?apikey=b6003d8a"; // HTTPS recommended
+const API_URL = "https://www.omdbapi.com?apikey=b6003d8a"; // Switched to HTTPS
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,7 +20,7 @@ const App = () => {
       const data = await response.json();
 
       if (data.Response === "True") {
-        setMovies(data.Search.slice(0, 10));
+        setMovies(data.Search.slice(0, 10)); // first 10 movies
       } else {
         setMovies([]);
       }
@@ -39,17 +39,27 @@ const App = () => {
   };
 
   useEffect(() => {
+    // Default search
     searchMovies("batman");
   }, []);
 
   return (
     <Router basename="/MovieZone">
       <div className="app fade-in">
-        <Link to="/" className="home-link">
+        {/* The forced reload version of the home link */}
+        <Link
+          to="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.reload();
+          }}
+          className="home-link"
+        >
           <h1>MOVIEZONE</h1>
         </Link>
 
         <Routes>
+          {/* Home page */}
           <Route
             path="/"
             element={
@@ -70,6 +80,19 @@ const App = () => {
                   <Link to="/recommendations" className="recommendation-link">
                     Recommendations
                   </Link>
+                  
+                  <Link
+          to="/"
+          className="back-button" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.reload();
+          }}
+          style={{ marginLeft: "1rem" }} // optional styling
+        >
+          Back
+        </Link>
+
                 </div>
 
                 {loading ? (
@@ -93,7 +116,10 @@ const App = () => {
             }
           />
 
+          {/* Recommendations page */}
           <Route path="/recommendations" element={<Recommendations />} />
+
+          {/* Movie Details page */}
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </div>

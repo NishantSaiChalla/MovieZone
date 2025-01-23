@@ -37,6 +37,7 @@ const MovieDetails = () => {
   if (!movie) {
     return (
       <div className="movie-details">
+        {/* Back button */}
         <button onClick={() => navigate(-1)} className="back-button">
           &#8592; Back
         </button>
