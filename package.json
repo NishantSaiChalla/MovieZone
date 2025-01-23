@@ -1,6 +1,8 @@
 {
+  
   "name": "reactproj",
   "version": "0.1.0",
+  "homepage": "https://NishantSaiChalla.github.io/MovieZone",
   "private": true,
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.4",
@@ -10,17 +12,19 @@
     "axios": "^1.7.9",
     "gh-pages": "^6.3.0",
     "lottie-react": "^2.4.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +48,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
-    "eslint-plugin-react": "^7.37.3"
+    "eslint-plugin-react": "^7.37.4"
   }
 }
