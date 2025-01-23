@@ -6,7 +6,7 @@ import Recommendations from "./Recommendations";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+const API_URL = "https://www.omdbapi.com?apikey=b6003d8a"; // HTTPS recommended
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,7 +20,7 @@ const App = () => {
       const data = await response.json();
 
       if (data.Response === "True") {
-        setMovies(data.Search.slice(0, 10)); // Display the first 10 movies
+        setMovies(data.Search.slice(0, 10));
       } else {
         setMovies([]);
       }
@@ -39,26 +39,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("batman"); // Default search when the app loads
+    searchMovies("batman");
   }, []);
 
   return (
-    <Router>
+    <Router basename="/MovieZone">
       <div className="app fade-in">
-        {/* The MovieZone title navigates back to the home screen */}
-        <Link
-          to="/"
-          onClick={(e) => {
-            e.preventDefault(); // Prevent React Router's default navigation
-            window.location.reload(); // Trigger full page reload
-          }}
-          className="home-link"
-        >
+        <Link to="/" className="home-link">
           <h1>MOVIEZONE</h1>
         </Link>
 
         <Routes>
-          {/* Home Page */}
           <Route
             path="/"
             element={
@@ -102,10 +93,7 @@ const App = () => {
             }
           />
 
-          {/* Recommendations Page */}
           <Route path="/recommendations" element={<Recommendations />} />
-
-          {/* Movie Details Page */}
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </div>

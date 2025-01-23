@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+const API_URL = "https://www.omdbapi.com?apikey=b6003d8a";
 const WATCHMODE_API_URL = "https://api.watchmode.com/v1/title/";
 const WATCHMODE_API_KEY = "lTsWm5fLodEbcVhMtFZTejNIZ9xrMWdvz4gXHwqo";
 
