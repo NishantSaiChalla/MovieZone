@@ -81,17 +81,14 @@ const App = () => {
                     Recommendations
                   </Link>
                   
-                  <Link
-          to="/"
-          className="back-button" 
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.reload();
-          }}
-          style={{ marginLeft: "1rem" }} // optional styling
-        >
-          Back
-        </Link>
+                  <Link to="/" className="back-button" onClick={(e) => {
+                  e.preventDefault();
+                  window.location.reload();
+                  }}
+                  style={{ marginLeft: "1rem" }} // optional styling
+                  >
+                  Back
+                  </Link>
 
                 </div>
 
