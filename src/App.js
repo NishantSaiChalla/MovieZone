@@ -47,7 +47,7 @@ const App = () => {
     <Router basename="/MovieZone">
       <div className="app fade-in">
         {/* The forced reload version of the home link */}
-        <Link
+        {/* <Link
           to="/"
           onClick={(e) => {
             e.preventDefault();
@@ -56,7 +56,12 @@ const App = () => {
           className="home-link"
         >
           <h1>MOVIEZONE</h1>
+        </Link>*/}
+
+        <Link to="/" className="home-link">
+        <h1>MOVIEZONE</h1>
         </Link>
+
 
         <Routes>
           {/* Home page */}
