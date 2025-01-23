@@ -58,9 +58,24 @@ const App = () => {
           <h1>MOVIEZONE</h1>
         </Link>*/}
 
+        {/*
         <Link to="/" className="home-link">
         <h1>MOVIEZONE</h1>
+        </Link>*/}
+        <Link
+        to="/"
+        className="home-link"
+        onClick={(e) => {
+        e.preventDefault();
+        // Force reload to the correct homepage URL on GitHub Pages
+        window.location.href = "https://NishantSaiChalla.github.io/MovieZone/";
+        }}
+        >
+        <h1>MOVIEZONE</h1>
         </Link>
+
+
+  
 
 
         <Routes>
